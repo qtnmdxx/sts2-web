@@ -1,0 +1,3 @@
+# Cloudflare (wrangler.jsonc) response headers; other hosts ignore this file.
+/*
+  Strict-Transport-Security: max-age=63072000

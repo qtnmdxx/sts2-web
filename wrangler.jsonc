@@ -1,0 +1,14 @@
+// Cloudflare Workers, static assets only (no Worker script): `pnpm build && npx wrangler deploy`.
+{
+  "name": "sts2-web",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./packages/wiki/dist",
+    // a missing page is a 404, not the wiki home
+    "not_found_handling": "none"
+  },
+  // The site's own domain (players' old game saves are kept per origin, in their browsers). A route rather than a custom domain:
+  // the zone's DNS record is left as it is, so deleting the route hands the domain back to what the record points at.
+  "routes": [{ "pattern": "sts2.moonrailgun.com/*", "zone_name": "moonrailgun.com" }],
+  "workers_dev": true
+}

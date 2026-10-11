@@ -1,0 +1,10 @@
+{
+  "name": "sts2-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "gen": "cd tools/cs2ts && DOTNET_ROOT=$HOME/.dotnet $HOME/.dotnet/dotnet run -c Release -- ../../ref/decompiled ../../packages/core/src/gen",
+    "build": "pnpm -F @sts2/wiki build",
+    "test": "pnpm -r test"
+  }
+}
